@@ -13,7 +13,7 @@ Yolo
        
        - Deep Learning platform Yolo 설치전 필수 요소들 설치.
        
-       - GPU 및 cudnn, opencv 적용을 위한 Makefile 작업.
+       - GPU 및 cuda, cudnn, opencv 적용을 위한 Makefile 작업.
        
        - 결과값을 텍스트파일로 저장하는 방법.
        
