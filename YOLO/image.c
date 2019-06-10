@@ -239,6 +239,7 @@ image **load_alphabet()
 void draw_detections(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes)
 {
     int i,j;
+	//txt file 생성 (Node.js_Server로 업로드)
     FILE *fs = fopen("/home/helper/Desktop/LastProject/NewNode/myproject/textFile/textFile.txt","w");
 
 
@@ -310,6 +311,7 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
 			exit(1);
 		}
 		else {
+			//classes Name 을 txt파일에 사
 			fprintf(fs,"%s\n",names[class]);
 
 		}
