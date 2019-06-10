@@ -608,6 +608,7 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
         }
         else{
             save_image(im, "predictions");
+//YOLO가 실행되었을 때 predictions image를 띄우지않게 OPENCV 주석. (자동화) 
 /*#ifdef OPENCV
             make_window("predictions", 512, 512, 0);
             show_image(im, "predictions", 0);
