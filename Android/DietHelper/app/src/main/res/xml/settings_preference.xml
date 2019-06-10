@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="설 정">
+
+        <PreferenceScreen
+            android:title="신체 치수 입력">
+        </PreferenceScreen>
+
+        <EditTextPreference
+            android:key="height"
+            android:title=" 키">
+        </EditTextPreference>
+
+        <EditTextPreference
+            android:key="weight"
+            android:title="몸무게">
+        </EditTextPreference>
+
+        <SwitchPreference
+            android:key="notice"
+            android:title="알림"/>
+
+        <PreferenceScreen
+            android:key="logout"
+            android:title="로그 아웃"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>
