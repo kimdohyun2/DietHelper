@@ -146,7 +146,6 @@ router.post('/save', function (req, res) {
       res.end();
     }
     else {
-      console.log('aaaaaaaaaa');
       res.writeHead(300,{'Content-Type': 'text/plain'});
       res.end();
     }
