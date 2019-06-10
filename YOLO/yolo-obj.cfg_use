@@ -4,4 +4,4 @@ subdivisions=64
 height=416
 width=416
 
-subdivisions 초기값 1로 설정되어있는데 이 값을 1로 돌렸을 때 Cuda out of Memory error시 1,8,16,32,64 로 늘려가며 error를 해결할수있다.
+//subdivisions 초기값 1로 설정되어있는데 이 값을 1로 돌렸을 때 Cuda out of Memory error시 1,8,16,32,64 로 늘려가며 error를 해결할수있다.
