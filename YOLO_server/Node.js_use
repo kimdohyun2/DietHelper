@@ -3,3 +3,40 @@
 // Node.js express-generator 패키지를 이용하여 server환경을 구축
 
 // Node.js로 부터 YOLO실행 하는 방법
+//android image -> routing (post) -> YOLO 
+router.post("/upload", uploadMulter.single('upload'), function (req, res) {
+  
+  console.log(req.file);
+  console.log(req.body);
+  console.log(req.file.filename);
+
+  var resObj = new Object();
+  
+  ///home/helper/Desktop/LastProject/NewNode/myproject/imageUpload/' + fileName
+  var fileName = req.file.filename;
+  exec('cd ; cd OpenCV_tutorial/OpenCV/opencv-3.2.0/build/darknet; ./darknet detector test data/obj.data yolo-obj.cfg backup/yolo-obj_10000.weights /home/helper/Desktop/LastProject/NewNode/myproject/imageUpload/' + fileName, { timeout: 7000 }, function (error, stdout, stderr) {
+
+    var firstArray = fs.readFileSync('/home/helper/Desktop/LastProject/NewNode/myproject/textFile/textFile.txt').toString().split("\n");
+    //var LastArray = [];
+    var classObject = new Object();
+    var classList = new Array();
+
+    for (var i = 0; i < firstArray.length - 1; i++) {
+      //LastArray[i] = firstArray[i];
+      classObject = new Object();
+      classObject.className = firstArray[i];
+      classList.push(classObject);
+    }
+    
+    fs.rename('/home/helper/OpenCV_tutorial/OpenCV/opencv-3.2.0/build/darknet/predictions.jpg', '/home/helper/Desktop/LastProject/NewNode/myproject/public/images/' + fileName, function (err) {
+      if (err) console.log('ERROR : ' + err);
+    });
+
+    resObj.classList = classList;
+    //address input = 자기 주소 입력
+    resObj.imageUrl = 'http://address input/images/' + fileName;
+    console.log(resObj);
+    console.log('stdout:'+stdout)
+    return res.json(200, resObj);
+  });
+});
