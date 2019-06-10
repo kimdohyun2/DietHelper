@@ -311,7 +311,7 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
 			exit(1);
 		}
 		else {
-			//classes Name 을 txt파일에 사
+			//classes Name 을 txt파일에 사용한다.
 			fprintf(fs,"%s\n",names[class]);
 
 		}
