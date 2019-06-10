@@ -5,3 +5,25 @@ height=416
 width=416
 
 //subdivisions 초기값 1로 설정되어있는데 이 값을 1로 돌렸을 때 Cuda out of Memory error시 1,8,16,32,64 로 늘려가며 error를 해결할수있다.
+
+[convolutional]
+size=1
+stride=1
+pad=1
+filters=75
+activation=linear
+
+[region]
+anchors = 1.08,1.19,  3.42,4.41,  6.63,11.38,  9.42,5.11,  16.62,10.52
+bias_match=1
+classes=10
+coords=4
+num=5
+softmax=1
+jitter=.2
+rescore=1
+
+//filters 값은 (classes + 5 ) * 5 = 75의 값을 볼 수 있는 것이다.
+//5의 값은 위의 num=5 YOLOv2 version은 = 5 , YOLOv3 version은 = 3 으로 계산한다.
+//Exam Classes 의 값이 5라고 가정했을 때 (5+5) * 5 = 50의 filters 값을 작성 할 수 있다.
+
