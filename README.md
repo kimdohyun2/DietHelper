@@ -38,4 +38,4 @@ Android
        
        - Application 사용 방법
        
-       - Application의 기능
+       - Application의 기능 (회원가입, 로그인, 그래프 도식화, Setting정보 변경)
