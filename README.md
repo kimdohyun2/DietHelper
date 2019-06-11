@@ -36,3 +36,6 @@ Android
 
        - AndroidStudio 환경
        
+       - Application 사용 방법
+       
+       - Application의 기능
